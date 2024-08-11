@@ -9,3 +9,5 @@ def about(request):
     return render(request, 'about.html')
 def menu(request):
     return render(request, 'menu.html')
+def FrenchFries(request):
+    return render(request, 'FrenchFries.html')
