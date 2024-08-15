@@ -101,9 +101,20 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="" class="order_online">
-                Order Online
+              <a href="{% url 'post_list' %}" class="order_online">
+                Trendings
               </a>
+              {% if user.is_authenticated %}
+              <form method="POST" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button class="order_online" type="submit">Log out</button>
+                
+              </form>
+              {% else %}
+              <a href="{% url 'login' %}" class="order_online">
+                Login
+              </a>
+              {% endif %}
             </div>
           </div>
         </nav>
