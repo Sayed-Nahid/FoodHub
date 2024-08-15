@@ -13,4 +13,5 @@ urlpatterns = [
     path('createpost', views.post_create, name="post_create"),
     path('<int:post_id>/editpost', views.post_edit, name='post_edit'),
     path('<int:post_id>/deletepost', views.post_delete, name='post_delete'),
+    path('register/', views.register, name='register'),
 ]
