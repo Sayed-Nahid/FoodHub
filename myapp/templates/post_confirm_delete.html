@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% block title %}Delete Post{% endblock title %}
-{% block FrenchFries %}
+{% block content %}
+<h1 class="text-center m-4"> Still Wanna delete the post?</h2>
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger">Delete</button>
+    <a class="btn btn-success" href="{% url 'post_list' %}"> Cancel </a>
+</form>
 
-
-
-{% endblock FrenchFries %}
+{% endblock content %}

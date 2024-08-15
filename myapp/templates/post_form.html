@@ -1,7 +1,18 @@
 {% extends "base.html" %}
 {% block title %}Form{% endblock title %}
-{% block FrenchFries %}
+{% block content %}
+<h2>
+    {%if form.instance.pk %}
+    Edit Post
+    {% else %}
+    Create Post
+    {%endif%}
+    <form method="post" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-warning" type="submit">Submit</button>
+    </form>
+    <a href="{% url 'post_list'%}"> Back to the Post list</a>
+</h2>
 
-
-
-{% endblock FrenchFries %}
+{% endblock content %}
